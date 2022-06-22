@@ -38,6 +38,10 @@ nav {
     z-index: 100;
 }
 
+body.dark nav {
+    border: 1px solid #393838;
+}
+
 nav .nav-bar {
     position: relative;
     height: 100%;

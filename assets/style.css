@@ -241,3 +241,15 @@ body.dark .search-field i {
         display: block;
     }
 }
+
+.menu {
+    position: fixed;
+    height: 70vh;
+    width: 320px;
+    left: -100%;
+    top: 0;
+    padding: 20px;
+    background-color: var(--side-nav);
+    z-index: 100;
+    transition: all 0.4s ease;
+}

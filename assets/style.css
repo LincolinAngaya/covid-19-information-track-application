@@ -284,3 +284,10 @@
         background-position: center;
         background-attachment: fixed;
     }
+    
+    .footer .box-container {
+        display: grid;
+        -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 1.0rem;
+    }

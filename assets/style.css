@@ -276,3 +276,13 @@ nav.active .nav-bar .navLogo a {
     font-size: 24px;
     cursor: pointer;
 }
+
+.nav-bar .nav-links {
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.nav-links li a {
+    display: block;
+    margin-top: 20px;
+}

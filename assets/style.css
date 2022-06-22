@@ -7,3 +7,15 @@
     transition: all 0.4s ease;
     ;
 }
+
+
+/* ===== Colors ===== */
+
+ :root {
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}

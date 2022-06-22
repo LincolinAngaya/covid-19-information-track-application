@@ -292,3 +292,9 @@
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 1.0rem;
     }
+    
+    .footer .box-container .box h3 {
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: #fff;
+    }

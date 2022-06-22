@@ -27,3 +27,13 @@ body.dark {
     --text-color: #CCC;
     --search-bar: #242526;
 }
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}

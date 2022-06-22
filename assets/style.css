@@ -54,3 +54,10 @@ nav .nav-bar {
     align-items: center;
     justify-content: space-between;
 }
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}

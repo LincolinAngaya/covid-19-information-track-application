@@ -321,3 +321,16 @@
     .footer .box-container .box a:hover i {
         padding-right: 2rem;
     }
+    
+    .footer .credit {
+        text-align: center;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        color: #fff;
+    }
+    
+    .footer .credit span {
+        color: #fff;
+    }

@@ -55,6 +55,14 @@ nav .nav-bar {
     justify-content: space-between;
 }
 
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
 nav .nav-bar .logo a {
     font-size: 25px;
     font-weight: 500;

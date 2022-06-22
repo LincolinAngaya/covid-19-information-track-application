@@ -83,3 +83,12 @@ nav .nav-bar .logo a {
     margin: 0 5px;
     list-style: none;
 }
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}

@@ -303,15 +303,15 @@
             display: block;
             font-size: 1.3rem;
             color: #fff;
-            padding: 0.5rem;
+            padding: 1.3rem;
             text-decoration: none;
             padding-bottom: 0;
         }
         
         .footer .box-container .box a i {
             color: white;
-            font-size: 32px;
-            padding-right: .5rem;
+            font-size: 28px;
+            padding-right: 0.5rem;
         }
         
         .footer .box-container .box a:hover {

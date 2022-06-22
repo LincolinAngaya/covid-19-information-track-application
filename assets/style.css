@@ -291,6 +291,7 @@
                 -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
                 grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
                 gap: 1.0rem;
+                padding-left: 70px;
             }
             
             .footer .box-container .box h3 {
@@ -329,6 +330,7 @@
                 padding-top: 1.5rem;
                 font-size: 1.5rem;
                 color: #fff;
+                margin-left: 0;
             }
             
             .footer .credit span {

@@ -353,4 +353,9 @@
                         justify-content: left;
                         text-align: left;
                     }
+                    .footer .box-container .box h3 {
+                        font-size: 1.5rem;
+                        padding: 1rem;
+                        color: blue;
+                    }
                 }

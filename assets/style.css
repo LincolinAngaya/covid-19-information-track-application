@@ -347,4 +347,10 @@
                         font-size: 1.3rem;
                         color: #fff;
                     }
+                    .box {
+                        margin-left: 19%;
+                        align-items: center;
+                        justify-content: left;
+                        text-align: left;
+                    }
                 }

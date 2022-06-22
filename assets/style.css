@@ -232,3 +232,12 @@ body.dark .search-field input {
 body.dark .search-field i {
     color: var(--text-color);
 }
+
+
+/*add navigaton bar media query*/
+
+@media(max-width:790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+}

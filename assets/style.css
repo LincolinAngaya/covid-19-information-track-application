@@ -313,3 +313,11 @@
         font-size: 32px;
         padding-right: .5rem;
     }
+    
+    .footer .box-container .box a:hover {
+        color: blue;
+    }
+    
+    .footer .box-container .box a:hover i {
+        padding-right: 2rem;
+    }

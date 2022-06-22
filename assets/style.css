@@ -78,3 +78,8 @@ nav .nav-bar .logo a {
     display: flex;
     align-items: center;
 }
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}

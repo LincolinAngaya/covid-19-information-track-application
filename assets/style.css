@@ -69,3 +69,7 @@ nav .nav-bar .logo a {
     color: var(--text-color);
     text-decoration: none;
 }
+
+.menu .logo-toggle {
+    display: none;
+}

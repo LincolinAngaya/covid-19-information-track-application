@@ -262,3 +262,17 @@ nav.active .nav-bar .navLogo a {
     opacity: 0;
     transition: all 0.3s ease;
 }
+
+.menu .logo-toggle {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-toggle .siderbarClose {
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -31,11 +31,11 @@ function handlePost(post) {
 
 
 
-    btn.textContent = "  X"
+
 
     postt.textContent = `   ${post}`
 
-    postt.appendChild(btn)
+
 
 
     document.querySelector('#list').appendChild(postt)

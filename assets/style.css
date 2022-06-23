@@ -300,6 +300,24 @@
                     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
                     gap: 1.0rem;
                 }
+                
+                .information .box-container .box:hover {
+                    background: #eee;
+                    color: black;
+                }
+                
+                .information.box-container .box:hover .content>* {
+                    color: black;
+                }
+                
+                .information .box-container .box:hover .btn {
+                    border-color: #fff;
+                }
+                
+                .information .box-container .box:hover .btn:hover {
+                    background: #fff;
+                    color: #10221b;
+                }
                 /*footer css*/
                 
                 .footer {

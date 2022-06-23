@@ -275,7 +275,22 @@
                         margin-top: 20px;
                     }
                 }
-                /*content css*/
+                /*information css*/
+                
+                .information {
+                    margin-top: 4%;
+                    background: #eee;
+                    height: 100%;
+                }
+                
+                .information .heading {
+                    padding-top: 42px;
+                    font-size: 39px;
+                    padding-left: 23px;
+                    padding-bottom: 22px;
+                    align-items: center;
+                    text-align: center;
+                }
                 /*footer css*/
                 
                 .footer {

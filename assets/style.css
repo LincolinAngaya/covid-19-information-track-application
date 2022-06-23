@@ -291,6 +291,15 @@
                     align-items: center;
                     text-align: center;
                 }
+                
+                .information .box-container {
+                    margin-left: 29px;
+                    display: -ms-grid;
+                    display: grid;
+                    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+                    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+                    gap: 1.0rem;
+                }
                 /*footer css*/
                 
                 .footer {

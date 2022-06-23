@@ -404,6 +404,22 @@
                     object-fit: cover;
                     border-radius: .5rem;
                 }
+                
+                .information .box-container .box .content {
+                    padding: 0.5rem;
+                }
+                
+                input[type=text] {
+                    margin-top: 0.5rem;
+                    display: inline-block;
+                    border: 0.2rem solid #10221b;
+                    color: #10221b;
+                    cursor: pointer;
+                    background: transparent;
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                    background-color: #FFF;
+                }
                 /*footer css media query*/
                 
                 @media (max-width: 820px) {

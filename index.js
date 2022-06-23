@@ -38,6 +38,6 @@ function handlePost(post) {
 
 
 
-    document.querySelector('#list').appendChild(postt)
+    document.querySelector('#comments_list').appendChild(postt)
 
 }

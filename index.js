@@ -11,30 +11,33 @@ likeButton.addEventListener('click', () => {
     })
     //add comment
 document.addEventListener('DOMContentLoaded', () => {
-    let form = document.querySelector('form')
+    let form = document.querySelector('#comment_form')
     form.addEventListener('submit', (event) => {
         event.preventDefault()
-        handleToDo(event.target.newtask.value)
+        handlePost(event.target['comment_input'].value)
         form.reset()
     })
 
 })
 
-function handleToDo(todo) {
+function handlePost(post) {
 
-    let task = document.createElement('li')
-    let btn = document.createElement('button')
+    let postt = document.createElement('comment_review')
+    let btn = document.createElement('buton')
     btn.addEventListener('click', (event) =>
         event.target.parentNode.remove()
 
     )
 
+
+
     btn.textContent = "  X"
 
-    task.textContent = `   ${todo}`
+    postt.textContent = `   ${post}`
 
-    task.appendChild(btn)
+    postt.appendChild(btn)
 
-    document.querySelector('#tasks').appendChild(task)
+
+    document.querySelector('#list').appendChild(postt)
 
 }

@@ -348,10 +348,10 @@
                     padding: 0.5rem;
                 }
                 
-                input[type=text] {
+                p {
                     margin-top: 0.5rem;
                     display: inline-block;
-                    border: 0.2rem solid #10221b;
+                    border: 2px solid #10221b;
                     color: #10221b;
                     cursor: pointer;
                     background: transparent;

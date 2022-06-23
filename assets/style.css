@@ -468,6 +468,10 @@
                     .information .box-container .box .content h1 {
                         text-align: left;
                     }
+                    .information .heading {
+                        margin-top: 34px;
+                        font-size: 30px;
+                    }
                 }
                 /*footer css*/
                 

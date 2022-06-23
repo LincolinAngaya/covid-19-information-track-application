@@ -301,6 +301,15 @@
                     gap: 1.0rem;
                 }
                 
+                .information .box-container .box {
+                    text-align: center;
+                    background: #fff;
+                    border: 0.2rem solid #10221b;
+                    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+                    border-radius: .5rem;
+                }
+                
                 .information .box-container .box:hover {
                     background: #eee;
                     color: black;

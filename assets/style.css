@@ -280,7 +280,6 @@
                 .information {
                     margin-top: 4%;
                     background: #eee;
-                    height: 100%;
                 }
                 
                 .information .heading {
@@ -293,7 +292,7 @@
                 }
                 
                 .information .box-container {
-                    margin-left: 29px;
+                    /* margin-left: 29px; */
                     display: -ms-grid;
                     display: grid;
                     -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];

@@ -1,512 +1,552 @@
-                        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                            font-family: 'Poppins', sans-serif;
-                            transition: all 0.4s ease;
-                            ;
-                        }
-                        /* ===== Colors ===== */
-                        
-                         :root {
-                            --body-color: #E4E9F7;
-                            --nav-color: #4070F4;
-                            --side-nav: #010718;
-                            --text-color: #FFF;
-                            --search-bar: #F2F2F2;
-                            --search-text: #010718;
-                        }
-                        
-                        body.dark {
-                            --body-color: #18191A;
-                            --nav-color: #242526;
-                            --side-nav: #242526;
-                            --text-color: #CCC;
-                            --search-bar: #242526;
-                        }
-                        
-                        nav {
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            height: 70px;
-                            width: 100%;
-                            background-color: var(--nav-color);
-                            z-index: 100;
-                        }
-                        
-                        body.dark nav {
-                            border: 1px solid #393838;
-                        }
-                        
-                        nav .nav-bar {
-                            position: relative;
-                            height: 100%;
-                            max-width: 1000px;
-                            width: 100%;
-                            background-color: var(--nav-color);
-                            margin: 0 auto;
-                            padding: 0 30px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                        }
-                        
-                        nav .nav-bar .sidebarOpen {
-                            color: var(--text-color);
-                            font-size: 25px;
-                            padding: 5px;
-                            cursor: pointer;
-                            display: none;
-                        }
-                        
-                        nav .nav-bar .logo a {
-                            font-size: 25px;
-                            font-weight: 500;
-                            color: var(--text-color);
-                            text-decoration: none;
-                        }
-                        
-                        .menu .logo-toggle {
-                            display: none;
-                        }
-                        
-                        .nav-bar .nav-links {
-                            display: flex;
-                            align-items: center;
-                        }
-                        
-                        .nav-bar .nav-links li {
-                            margin: 0 5px;
-                            list-style: none;
-                        }
-                        
-                        .nav-links li a {
-                            position: relative;
-                            font-size: 17px;
-                            font-weight: 400;
-                            color: var(--text-color);
-                            text-decoration: none;
-                            padding: 10px;
-                        }
-                        
-                        .nav-links li a::before {
-                            content: '';
-                            position: absolute;
-                            left: 50%;
-                            bottom: 0;
-                            transform: translateX(-50%);
-                            height: 6px;
-                            width: 6px;
-                            border-radius: 50%;
-                            background-color: var(--text-color);
-                            opacity: 0;
-                            transition: all 0.3s ease;
-                        }
-                        
-                        .nav-links li:hover a::before {
-                            opacity: 1;
-                        }
-                        
-                        .nav-bar .darkLight-searchBox {
-                            display: flex;
-                            align-items: center;
-                        }
-                        
-                        .darkLight-searchBox .dark-light,
-                        .darkLight-searchBox .searchToggle {
-                            height: 40px;
-                            width: 40px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin: 0 5px;
-                        }
-                        
-                        .dark-light i,
-                        .searchToggle i {
-                            position: absolute;
-                            color: var(--text-color);
-                            font-size: 22px;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                        }
-                        
-                        .dark-light i.sun {
-                            opacity: 0;
-                            pointer-events: none;
-                        }
-                        
-                        .dark-light.active i.sun {
-                            opacity: 1;
-                            pointer-events: auto;
-                        }
-                        
-                        .dark-light.active i.moon {
-                            opacity: 0;
-                            pointer-events: none;
-                        }
-                        
-                        .searchToggle i.cancel {
-                            opacity: 0;
-                            pointer-events: none;
-                        }
-                        
-                        .searchToggle.active i.cancel {
-                            opacity: 1;
-                            pointer-events: auto;
-                        }
-                        
-                        .searchToggle.active i.search {
-                            opacity: 0;
-                            pointer-events: none;
-                        }
-                        
-                        .searchBox {
-                            position: relative;
-                        }
-                        
-                        .searchBox .search-field {
-                            position: absolute;
-                            bottom: -85px;
-                            right: 5px;
-                            height: 50px;
-                            width: 300px;
-                            display: flex;
-                            align-items: center;
-                            background-color: var(--nav-color);
-                            padding: 3px;
-                            border-radius: 6px;
-                            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-                            opacity: 0;
-                            pointer-events: none;
-                            transition: all 0.3s ease;
-                        }
-                        
-                        .searchToggle.active~.search-field {
-                            bottom: -74px;
-                            opacity: 1;
-                            pointer-events: auto;
-                        }
-                        
-                        .search-field::before {
-                            content: '';
-                            position: absolute;
-                            right: 14px;
-                            top: -4px;
-                            height: 12px;
-                            width: 12px;
-                            background-color: var(--nav-color);
-                            transform: rotate(-45deg);
-                            z-index: -1;
-                        }
-                        
-                        .search-field input {
-                            height: 100%;
-                            width: 100%;
-                            padding: 0 45px 0 15px;
-                            outline: none;
-                            border: none;
-                            border-radius: 4px;
-                            font-size: 14px;
-                            font-weight: 400;
-                            color: var(--search-text);
-                            background-color: var(--search-bar);
-                        }
-                        
-                        body.dark .search-field input {
-                            color: var(--text-color);
-                        }
-                        
-                        .search-field i {
-                            position: absolute;
-                            color: var(--nav-color);
-                            right: 15px;
-                            font-size: 22px;
-                            cursor: pointer;
-                        }
-                        
-                        body.dark .search-field i {
-                            color: var(--text-color);
-                        }
-                        /*add navigaton bar media query*/
-                        
-                        @media(max-width:790px) {
-                            nav .nav-bar .sidebarOpen {
-                                display: block;
-                            }
-                            .menu {
-                                position: fixed;
-                                height: 70vh;
-                                width: 320px;
-                                left: -100%;
-                                top: 0;
-                                padding: 20px;
-                                background-color: var(--side-nav);
-                                z-index: 100;
-                                transition: all 0.4s ease;
-                            }
-                            nav.active .menu {
-                                left: -0%;
-                            }
-                            nav.active .nav-bar .navLogo a {
-                                opacity: 0;
-                                transition: all 0.3s ease;
-                            }
-                            .menu .logo-toggle {
-                                display: block;
-                                width: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                            }
-                            .logo-toggle .siderbarClose {
-                                color: var(--text-color);
-                                font-size: 24px;
-                                cursor: pointer;
-                            }
-                            .nav-bar .nav-links {
-                                flex-direction: column;
-                                padding-top: 30px;
-                            }
-                            .nav-links li a {
-                                display: block;
-                                margin-top: 20px;
-                            }
-                        }
-                        /*information css*/
-                        
-                        .information {
-                            margin-top: 4%;
-                            background: #eee;
-                            height: 100%;
-                        }
-                        
-                        .information .heading {
-                            padding-top: 42px;
-                            font-size: 39px;
-                            padding-left: 23px;
-                            padding-bottom: 22px;
-                            align-items: center;
-                            text-align: center;
-                        }
-                        
-                        .information .box-container {
-                            margin-left: 29px;
-                            display: -ms-grid;
-                            display: grid;
-                            -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
-                            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-                            gap: 1.0rem;
-                        }
-                        
-                        .information .box-container .box {
-                            text-align: center;
-                            background: #fff;
-                            border: 0.2rem solid #10221b;
-                            -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-                            border-radius: .5rem;
-                        }
-                        
-                        .information .box-container .box:hover {
-                            background: #eee;
-                            color: black;
-                        }
-                        
-                        .information.box-container .box:hover .content>* {
-                            color: black;
-                        }
-                        
-                        .information .box-container .box:hover .btn {
-                            border-color: #fff;
-                        }
-                        
-                        .information .box-container .box:hover .btn:hover {
-                            background: #fff;
-                            color: #10221b;
-                        }
-                        
-                        .information .box-container .box .image {
-                            height: 19rem;
-                            overflow: hidden;
-                            padding: 0.5rem;
-                            padding-bottom: 0;
-                            border-radius: .5rem;
-                        }
-                        
-                        .information .box-container .box .image img {
-                            height: 100%;
-                            width: 80%;
-                            -o-object-fit: cover;
-                            object-fit: cover;
-                            border-radius: .5rem;
-                        }
-                        
-                        .information .box-container .box .content {
-                            padding: 0.5rem;
-                        }
-                        
-                        input[type=text] {
-                            margin-top: 0.5rem;
-                            display: inline-block;
-                            border: 0.2rem solid #10221b;
-                            color: #10221b;
-                            cursor: pointer;
-                            background: transparent;
-                            font-size: 1.3rem;
-                            padding: 0 0.5rem;
-                            background-color: #FFF;
-                        }
-                        
-                        .user-part {
-                            border: 1px solid black;
-                            margin-top: 0.5rem;
-                            display: inline-block;
-                            border: 1px solid #10221b;
-                            color: #10221b;
-                            border-radius: 12px;
-                            cursor: pointer;
-                            background: transparent;
-                            font-size: 1.3rem;
-                            padding: 0 0.5rem;
-                            background-color: #FFF;
-                        }
-                        /*add like styling*/
-                        
-                        .likes-section {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 0 10px;
-                        }
-                        
-                        .comments {
-                            list-style: none;
-                        }
-                        
-                        .comment-form {
-                            margin: 23px;
-                        }
-                        
-                        .likes {
-                            font-size: 0.9rem;
-                            font-weight: 600;
-                        }
-                        
-                        .like-button {
-                            color: rgb(255, 127, 80);
-                            font-size: 2.5rem;
-                            border: none;
-                            background: none;
-                            transition: color 300ms;
-                            cursor: pointer;
-                        }
-                        
-                        .like-button:hover {
-                            color: rgb(241, 71, 19);
-                        }
-                        
-                        .like-button:active {
-                            color: rgb(253, 159, 124);
-                        }
-                        
-                        .like-button:focus {
-                            outline: none;
-                        }
-                        
-                        .post {
-                            padding: 10px;
-                            color: #fff;
-                            font-size: 16px;
-                            font-weight: 500;
-                            letter-spacing: 1px;
-                            background-color: #4070f4;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                        }
-                        /*footer css*/
-                        
-                        .footer {
-                            margin-top: 20%;
-                            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(./images/footer-bg.jpg) no-repeat;
-                            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/footer-bg.jpg) no-repeat;
-                            background-size: cover;
-                            background-position: center;
-                            background-attachment: fixed;
-                        }
-                        
-                        .footer .box-container {
-                            display: grid;
-                            -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
-                            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-                            gap: 1.0rem;
-                            padding-left: 70px;
-                        }
-                        
-                        .footer .box-container .box h3 {
-                            font-size: 1.5rem;
-                            padding-top: 1rem;
-                            color: #fff;
-                        }
-                        
-                        .footer .box-container .box a {
-                            display: block;
-                            font-size: 1.3rem;
-                            color: #fff;
-                            padding: 1.3rem;
-                            text-decoration: none;
-                            padding-bottom: 0;
-                        }
-                        
-                        .footer .box-container .box a i {
-                            color: white;
-                            font-size: 28px;
-                            padding-right: 0.5rem;
-                        }
-                        
-                        .footer .box-container .box a:hover {
-                            color: blue;
-                        }
-                        
-                        .footer .box-container .box a:hover i {
-                            padding-right: 2rem;
-                        }
-                        
-                        .footer .credit {
-                            text-align: center;
-                            margin-top: 1.0rem;
-                            padding-bottom: 1.5rem;
-                            padding-top: 1.5rem;
-                            font-size: 1.5rem;
-                            color: #fff;
-                            margin-left: 0;
-                        }
-                        
-                        .footer .credit span {
-                            color: #fff;
-                        }
-                        /*footer css media query*/
-                        
-                        @media (max-width: 820px) {
-                            .footer .credit {
-                                text-align: center;
-                                margin-top: 1.5rem;
-                                padding: 1rem;
-                                padding-top: 0.5rem;
-                                font-size: 1.3rem;
-                                color: #fff;
-                            }
-                            .box {
-                                margin-left: 19%;
-                                align-items: center;
-                                justify-content: left;
-                                text-align: left;
-                            }
-                            .footer .box-container .box h3 {
-                                font-size: 1.5rem;
-                                padding: 1rem;
-                                color: blue;
-                            }
-                        }
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Poppins', sans-serif;
+                    transition: all 0.4s ease;
+                    ;
+                }
+                /* ===== Colors ===== */
+                
+                 :root {
+                    --body-color: #E4E9F7;
+                    --nav-color: #4070F4;
+                    --side-nav: #010718;
+                    --text-color: #FFF;
+                    --search-bar: #F2F2F2;
+                    --search-text: #010718;
+                }
+                
+                body.dark {
+                    --body-color: #18191A;
+                    --nav-color: #242526;
+                    --side-nav: #242526;
+                    --text-color: #CCC;
+                    --search-bar: #242526;
+                }
+                
+                nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    height: 70px;
+                    width: 100%;
+                    background-color: var(--nav-color);
+                    z-index: 100;
+                }
+                
+                body.dark nav {
+                    border: 1px solid #393838;
+                }
+                
+                nav .nav-bar {
+                    position: relative;
+                    height: 100%;
+                    max-width: 1000px;
+                    width: 100%;
+                    background-color: var(--nav-color);
+                    margin: 0 auto;
+                    padding: 0 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                
+                nav .nav-bar .sidebarOpen {
+                    color: var(--text-color);
+                    font-size: 25px;
+                    padding: 5px;
+                    cursor: pointer;
+                    display: none;
+                }
+                
+                nav .nav-bar .logo a {
+                    font-size: 25px;
+                    font-weight: 500;
+                    color: var(--text-color);
+                    text-decoration: none;
+                }
+                
+                .menu .logo-toggle {
+                    display: none;
+                }
+                
+                .nav-bar .nav-links {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .nav-bar .nav-links li {
+                    margin: 0 5px;
+                    list-style: none;
+                }
+                
+                .nav-links li a {
+                    position: relative;
+                    font-size: 17px;
+                    font-weight: 400;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    padding: 10px;
+                }
+                
+                .nav-links li a::before {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    height: 6px;
+                    width: 6px;
+                    border-radius: 50%;
+                    background-color: var(--text-color);
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                }
+                
+                .nav-links li:hover a::before {
+                    opacity: 1;
+                }
+                
+                .nav-bar .darkLight-searchBox {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .darkLight-searchBox .dark-light,
+                .darkLight-searchBox .searchToggle {
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 5px;
+                }
+                
+                .dark-light i,
+                .searchToggle i {
+                    position: absolute;
+                    color: var(--text-color);
+                    font-size: 22px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                
+                .dark-light i.sun {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                
+                .dark-light.active i.sun {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+                
+                .dark-light.active i.moon {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                
+                .searchToggle i.cancel {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                
+                .searchToggle.active i.cancel {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+                
+                .searchToggle.active i.search {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                
+                .searchBox {
+                    position: relative;
+                }
+                
+                .searchBox .search-field {
+                    position: absolute;
+                    bottom: -85px;
+                    right: 5px;
+                    height: 50px;
+                    width: 300px;
+                    display: flex;
+                    align-items: center;
+                    background-color: var(--nav-color);
+                    padding: 3px;
+                    border-radius: 6px;
+                    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.3s ease;
+                }
+                
+                .searchToggle.active~.search-field {
+                    bottom: -74px;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+                
+                .search-field::before {
+                    content: '';
+                    position: absolute;
+                    right: 14px;
+                    top: -4px;
+                    height: 12px;
+                    width: 12px;
+                    background-color: var(--nav-color);
+                    transform: rotate(-45deg);
+                    z-index: -1;
+                }
+                
+                .search-field input {
+                    height: 100%;
+                    width: 100%;
+                    padding: 0 45px 0 15px;
+                    outline: none;
+                    border: none;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: var(--search-text);
+                    background-color: var(--search-bar);
+                }
+                
+                body.dark .search-field input {
+                    color: var(--text-color);
+                }
+                
+                .search-field i {
+                    position: absolute;
+                    color: var(--nav-color);
+                    right: 15px;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+                
+                body.dark .search-field i {
+                    color: var(--text-color);
+                }
+                /*add navigaton bar media query*/
+                
+                @media(max-width:790px) {
+                    nav .nav-bar .sidebarOpen {
+                        display: block;
+                    }
+                    .menu {
+                        position: fixed;
+                        height: 70vh;
+                        width: 320px;
+                        left: -100%;
+                        top: 0;
+                        padding: 20px;
+                        background-color: var(--side-nav);
+                        z-index: 100;
+                        transition: all 0.4s ease;
+                    }
+                    nav.active .menu {
+                        left: -0%;
+                    }
+                    nav.active .nav-bar .navLogo a {
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                    }
+                    .menu .logo-toggle {
+                        display: block;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .logo-toggle .siderbarClose {
+                        color: var(--text-color);
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+                    .nav-bar .nav-links {
+                        flex-direction: column;
+                        padding-top: 30px;
+                    }
+                    .nav-links li a {
+                        display: block;
+                        margin-top: 20px;
+                    }
+                }
+                /*information css*/
+                
+                .information {
+                    margin-top: 4%;
+                    background: #eee;
+                    height: 100%;
+                }
+                
+                .information .heading {
+                    padding-top: 42px;
+                    font-size: 39px;
+                    padding-left: 23px;
+                    padding-bottom: 22px;
+                    align-items: center;
+                    text-align: center;
+                }
+                
+                .information .box-container {
+                    margin-left: 29px;
+                    display: -ms-grid;
+                    display: grid;
+                    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+                    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+                    gap: 1.0rem;
+                }
+                
+                .information .box-container .box {
+                    text-align: center;
+                    background: #fff;
+                    border: 0.2rem solid #10221b;
+                    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+                    border-radius: .5rem;
+                }
+                
+                .information .box-container .box:hover {
+                    background: #eee;
+                    color: black;
+                }
+                
+                .information.box-container .box:hover .content>* {
+                    color: black;
+                }
+                
+                .information .box-container .box:hover .btn {
+                    border-color: #fff;
+                }
+                
+                .information .box-container .box:hover .btn:hover {
+                    background: #fff;
+                    color: #10221b;
+                }
+                
+                .information .box-container .box .image {
+                    height: 19rem;
+                    overflow: hidden;
+                    padding: 0.5rem;
+                    padding-bottom: 0;
+                    border-radius: .5rem;
+                }
+                
+                .information .box-container .box .image img {
+                    height: 100%;
+                    width: 80%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    border-radius: .5rem;
+                }
+                
+                .information .box-container .box .content {
+                    padding: 0.5rem;
+                }
+                
+                input[type=text] {
+                    margin-top: 0.5rem;
+                    display: inline-block;
+                    border: 0.2rem solid #10221b;
+                    color: #10221b;
+                    cursor: pointer;
+                    background: transparent;
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                    background-color: #FFF;
+                }
+                
+                .user-part {
+                    border: 1px solid black;
+                    margin-top: 0.5rem;
+                    display: inline-block;
+                    border: 1px solid #10221b;
+                    color: #10221b;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    background: transparent;
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                    background-color: #FFF;
+                }
+                /*add like styling*/
+                
+                .likes-section {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 10px;
+                }
+                
+                .comments {
+                    list-style: none;
+                }
+                
+                .comment-form {
+                    margin: 23px;
+                }
+                
+                .likes {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+                
+                .like-button {
+                    color: rgb(255, 127, 80);
+                    font-size: 2.5rem;
+                    border: none;
+                    background: none;
+                    transition: color 300ms;
+                    cursor: pointer;
+                }
+                
+                .like-button:hover {
+                    color: rgb(241, 71, 19);
+                }
+                
+                .like-button:active {
+                    color: rgb(253, 159, 124);
+                }
+                
+                .like-button:focus {
+                    outline: none;
+                }
+                
+                .post {
+                    padding: 10px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    background-color: #4070f4;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                /*add information media query*/
+                
+                @media (max-width: 820px) {
+                    .user-part {
+                        width: 100%;
+                        border: 1px solid black;
+                        margin-top: 0.5rem;
+                        display: inline-block;
+                        border: 1px solid #10221b;
+                        color: #10221b;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        background: transparent;
+                        font-size: 1.3rem;
+                        padding: 0 0.5rem;
+                        background-color: #FFF;
+                    }
+                    /*add like styling*/
+                    .likes-section {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 6px;
+                    }
+                    #comment {
+                        list-style: none;
+                    }
+                    .likes {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                    }
+                    .like-button {
+                        color: rgb(255, 127, 80);
+                        font-size: 2.5rem;
+                        border: none;
+                        background: none;
+                        transition: color 300ms;
+                        cursor: pointer;
+                    }
+                }
+                /*footer css*/
+                
+                .footer {
+                    margin-top: 20%;
+                    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(./images/footer-bg.jpg) no-repeat;
+                    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/footer-bg.jpg) no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                }
+                
+                .footer .box-container {
+                    display: grid;
+                    -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+                    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+                    gap: 1.0rem;
+                    padding-left: 70px;
+                }
+                
+                .footer .box-container .box h3 {
+                    font-size: 1.5rem;
+                    padding-top: 1rem;
+                    color: #fff;
+                }
+                
+                .footer .box-container .box a {
+                    display: block;
+                    font-size: 1.3rem;
+                    color: #fff;
+                    padding: 1.3rem;
+                    text-decoration: none;
+                    padding-bottom: 0;
+                }
+                
+                .footer .box-container .box a i {
+                    color: white;
+                    font-size: 28px;
+                    padding-right: 0.5rem;
+                }
+                
+                .footer .box-container .box a:hover {
+                    color: blue;
+                }
+                
+                .footer .box-container .box a:hover i {
+                    padding-right: 2rem;
+                }
+                
+                .footer .credit {
+                    text-align: center;
+                    margin-top: 1.0rem;
+                    padding-bottom: 1.5rem;
+                    padding-top: 1.5rem;
+                    font-size: 1.5rem;
+                    color: #fff;
+                    margin-left: 0;
+                }
+                
+                .footer .credit span {
+                    color: #fff;
+                }
+                /*footer css media query*/
+                
+                @media (max-width: 820px) {
+                    .footer .credit {
+                        text-align: center;
+                        margin-top: 1.5rem;
+                        padding: 1rem;
+                        padding-top: 0.5rem;
+                        font-size: 1.3rem;
+                        color: #fff;
+                    }
+                    .box {
+                        margin-left: 19%;
+                        align-items: center;
+                        justify-content: left;
+                        text-align: left;
+                    }
+                    .footer .box-container .box h3 {
+                        font-size: 1.5rem;
+                        padding: 1rem;
+                        color: blue;
+                    }
+                }

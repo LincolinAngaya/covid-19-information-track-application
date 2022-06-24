@@ -310,6 +310,7 @@
                 }
                 
                 .country_list {
+                    margin: 10px;
                     display: grid;
                     -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
                     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));

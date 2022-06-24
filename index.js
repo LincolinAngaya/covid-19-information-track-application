@@ -7,7 +7,12 @@ function fetchCountry() {
     fetch('https://api.covid19api.com/summary')
         .then(response => response.json())
         .then((movies) => renderCountry(county))
-} //declare variables
+}
+renderCountry(county) {
+
+
+    }
+    //declare variables
 const countryList = document.querySelector('#countries');
 const countryName = document.getElementById('country');
 const countryCode = document.getElementById('code');

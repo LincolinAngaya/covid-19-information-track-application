@@ -1,3 +1,5 @@
+//declare variables
+let
 let countLikes = document.getElementById('like-count')
 
 let likeButton = document.getElementById('like-button')
@@ -29,14 +31,7 @@ function handlePost(post) {
 
     )
 
-
-
-
-
     postt.textContent = `   ${post}`
-
-
-
 
     document.querySelector('#comments_list').appendChild(postt)
 

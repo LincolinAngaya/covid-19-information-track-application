@@ -309,6 +309,14 @@
                     border-radius: .5rem;
                 }
                 
+                .country_list {
+                    border: 1px solid black;
+                }
+                
+                .divided_list {
+                    list-style: none;
+                }
+                
                 .information .box-container .box:hover {
                     background: #eee;
                     color: black;

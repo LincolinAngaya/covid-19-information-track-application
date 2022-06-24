@@ -310,11 +310,25 @@
                 }
                 
                 .country_list {
+                    display: grid;
+                    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
+                    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+                    gap: 0.3rem;
                     border: 1px solid black;
+                    margin: auto;
+                    height: 50vh;
+                    background-color: #FFF;
                 }
                 
                 .divided_list {
                     list-style: none;
+                    font-size: 20px;
+                }
+                
+                .divided_list li:hover {
+                    background-color: whitesmoke;
+                    border: 1px solid black;
+                    padding: 10px;
                 }
                 
                 .information .box-container .box:hover {

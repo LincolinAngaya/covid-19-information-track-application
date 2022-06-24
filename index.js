@@ -1,7 +1,12 @@
 //declare variables
-let
+const countryList = document.querySelector('#countries');
+const countryName = document.getElementById('country');
+const countryCode = document.getElementById('code');
+const date = document.getElementById('date');
+const confirmed = document.getElementById('confirmed');
+const deaths = document.getElementById('deaths');
+const recovered = document.getElementById('recovered');
 let countLikes = document.getElementById('like-count')
-
 let likeButton = document.getElementById('like-button')
 
 

@@ -18,28 +18,25 @@ function fetchCountry() {
         .then(response => response.json())
         .then((county) => renderCountry(county))
 }
+
 renderCountry(county) {
     county.forEach(county => {
-            let list = document.createElement('li');
-            list.innerText = county.Country;
-            countryList.appendChild(list);
+        let list = document.createElement('li');
+        list.innerText = county.Country;
+        countryList.appendChild(list);
 
-            console.log(list)
-                //render spefic country details
+        //render spefic country details
 
-            list.addEventListener('click', () => {
-
-
-                countryName.textContent = county.Country;
-                countryCode.textContent = county.CountryCode;
-                date.textContent = county.Date;
-                confirmed.textContent = county.NewConfirmed;
-                deaths.textContent = county.TotalDeaths;
-                recovered.textContent = county.TotalRecovered;
-            })
-
-        }
+        list.addEventListener('click', () => {
 
 
-    )
+            countryName.textContent = county.Country;
+            countryCode.textContent = county.CountryCode;
+            date.textContent = county.Date;
+            confirmed.textContent = county.NewConfirmed;
+            deaths.textContent = county.TotalDeaths;
+            recovered.textContent = county.TotalRecovered;
+        })
+    })
+
 }

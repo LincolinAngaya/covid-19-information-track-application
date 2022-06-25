@@ -67,3 +67,25 @@ function counting(target, element) {
         element.textContent = target;
     }
 };
+
+function total(Confirmed, Deaths, Recovered) {
+    counting(Confirmed, confirmed.children[1]);
+    // Total Deaths
+    counting(Deaths, deaths.children[1]);
+    // Total Recovered
+    counting(Recovered, recovered.children[1]);
+};
+
+function newUpdate(Confirmed, Deaths, Recovered) {
+    // New Confirmed
+    counting(Confirmed, confirmed.children[2]);
+    // New Deaths
+    counting(Deaths, deaths.children[2]);
+    // New Recovered
+    counting(Recovered, recovered.children[2]);
+};
+
+function resetValue(element) {
+    element.children[1].textContent = 0;
+    element.children[2].textContent = 0;
+};

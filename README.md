@@ -1,4 +1,4 @@
-# covid-19-information-track-application
+# Covid-19-information-track-application
 this an apllication to let user all over the world to check covid infection and other neccessary information updates.It has other pages to learn on measures and symptoms .
  ## Developed by:
   Lincolin Angaya

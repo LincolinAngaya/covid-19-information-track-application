@@ -31,28 +31,37 @@ async function covid(country) {
             nameCountry.textContent = 'The World';
             dataChart = [TotalConfirmed, TotalDeaths, TotalRecovered];
         };
+        //render spefic country details
+        data.Countries.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.Country;
+                option.textContent = item.Country;
+                countries.appendChild(option);
+
+                if (country === item.Country) {
+                    total(item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered);
+                    newUpdate(item.NewConfirmed, item.NewDeaths, item.NewRecovered);
+
+                    nameCountry.textContent = item.Country;
+                    // dataChart = [item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered];
+                }
+            }
+        }
+
     }
 
-}
 
 
 
-function renderCountry(country) {
 
-    Countries.Country.country.forEach(country => {
-        let list = document.createElement('li');
-        list.innerText = country.Countries.Country;
-        countryList.appendChild(list);
 
-        //render spefic country details
-
-        list.addEventListener('click', () => {
-            countryName.textContent = country.Country;
-            countryCode.textContent = country.CountryCode;
-            date.textContent = country.Date;
-            confirmed.textContent = country.NewConfirmed;
-            deaths.textContent = country.TotalDeaths;
-            recovered.textContent = country.TotalRecovered;
-        })
+    list.addEventListener('click', () => {
+        countryName.textContent = country.Country;
+        countryCode.textContent = country.CountryCode;
+        date.textContent = country.Date;
+        confirmed.textContent = country.NewConfirmed;
+        deaths.textContent = country.TotalDeaths;
+        recovered.textContent = country.TotalRecovered;
     })
+})
 }

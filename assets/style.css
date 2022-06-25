@@ -219,18 +219,6 @@
                     border-radius: .5rem;
                 }
                 
-                .country_list {
-                    margin: 10px;
-                    display: grid;
-                    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
-                    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-                    gap: 0.3rem;
-                    border: 1px solid black;
-                    margin: auto;
-                    height: 50vh;
-                    background-color: #FFF;
-                }
-                
                 .divided_list {
                     list-style: none;
                     font-size: 20px;

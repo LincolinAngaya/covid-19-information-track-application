@@ -1,11 +1,13 @@
 //declare variables
 const countryList = document.querySelector('#countries');
+``
 const countryName = document.getElementById('country');
 const countryCode = document.getElementById('code');
 const date = document.getElementById('date');
 const confirmed = document.getElementById('confirmed');
 const deaths = document.getElementById('deaths');
 const recovered = document.getElementById('recovered');
+
 
 //add fectch section
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,27 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
 function fetchCountry() {
     fetch('https://api.covid19api.com/summary')
         .then(response => response.json())
-        .then((county) => renderCountry(county))
+        .then(country => renderCountry(country))
 }
 
-renderCountry(county) {
-    county.forEach(county => {
+
+function renderCountry(country) {
+
+    Countries.Country.country.forEach(country => {
         let list = document.createElement('li');
-        list.innerText = county.Country;
+        list.innerText = country.Countries.Country;
         countryList.appendChild(list);
 
         //render spefic country details
 
         list.addEventListener('click', () => {
-
-
-            countryName.textContent = county.Country;
-            countryCode.textContent = county.CountryCode;
-            date.textContent = county.Date;
-            confirmed.textContent = county.NewConfirmed;
-            deaths.textContent = county.TotalDeaths;
-            recovered.textContent = county.TotalRecovered;
+            countryName.textContent = country.Country;
+            countryCode.textContent = country.CountryCode;
+            date.textContent = country.Date;
+            confirmed.textContent = country.NewConfirmed;
+            deaths.textContent = country.TotalDeaths;
+            recovered.textContent = country.TotalRecovered;
         })
     })
-
 }

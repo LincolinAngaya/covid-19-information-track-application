@@ -215,7 +215,7 @@
                     background-color: var(--search-bar);
                 }
                 
-                body.dark .search-field input {
+                body.srch input {
                     color: var(--text-color);
                 }
                 

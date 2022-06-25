@@ -7,13 +7,6 @@ const confirmed = document.querySelector('.confirmed');
 const deaths = document.querySelector('.deaths');
 const recovered = document.querySelector('.recovered');
 const countryList = document.querySelector('#countries');
-``
-const countryName = document.getElementById('country');
-const countryCode = document.getElementById('code');
-const date = document.getElementById('date');
-const confirmed = document.getElementById('confirmed');
-const deaths = document.getElementById('deaths');
-const recovered = document.getElementById('recovered');
 
 
 //add fectch section

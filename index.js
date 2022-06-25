@@ -52,3 +52,18 @@ async function covid(country) {
         flex.innerHTML = `<h2>Loading.....</h2>`;
     }
 }
+const speed = 100;
+
+function counting(target, element) {
+    const inc = target / speed;
+    const count = +element.textContent;
+    if (count < target) {
+        element.textContent = Math.ceil(count + inc);
+        setTimeout(() => {
+            counting(target, element)
+        }, 1)
+
+    } else {
+        element.textContent = target;
+    }
+};

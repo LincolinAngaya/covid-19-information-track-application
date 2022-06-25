@@ -205,14 +205,17 @@
         
         h2 {
             color: darkblue;
+            font-size: 45px;
         }
         
         h3 {
             margin: 10px 0;
+            font-size: 20px;
         }
         
         #date {
-            color: teal;
+            color: blue;
+            font-size: 40px;
         }
         
         form button {

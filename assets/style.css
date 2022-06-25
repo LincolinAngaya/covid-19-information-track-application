@@ -108,6 +108,15 @@
                 .nav-links li:hover a::before {
                     opacity: 1;
                 }
+                
+                #search-button {
+                    background-color: var(--nav-color);
+                    border: none;
+                    color: white;
+                    font-size: 23px;
+                    padding: 8px;
+                    border-radius: 5px;
+                }
                 /*add navigaton bar media query*/
                 
                 @media(max-width:790px) {

@@ -30,7 +30,7 @@ covid-19 information-track-application is a website  that allows you to see  che
 ## Features
 As a user of the application,you will be able to :
 1.enter your country  in order to go to get covid results in that country.
-2. you can view your results immedietly after odering the clothes  and press submit button.
+2. you can view your results immedietly after pressing search button.
 
 
  ###  Requirements

@@ -10,14 +10,15 @@ const countryList = document.querySelector('#countries');
 
 
 //add fectch section
+const API_URL = "https://api.covid19api.com/summary";
 document.addEventListener("DOMContentLoaded", () => {
     fetchCountry();
 });
 
 //fetch data function
 function fetchCountry() {
-    fetch('https://api.covid19api.com/summary')
-        .then(response => response.json())
+
+    .then(response => response.json())
         .then(country => renderCountry(country))
 }
 

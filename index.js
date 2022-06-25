@@ -20,7 +20,9 @@ async function covid(country) {
     const res = await fetch(API_URL);
     const data = await res.json();
     console.log(country)
-
+    if (res.status === 4 || res.status === 200) {
+        date.textContent = new Date(data.Date).toDateString();
+    }
 
 }
 

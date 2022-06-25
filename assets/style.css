@@ -248,6 +248,7 @@
         }
         
         .content .box p {
+            font-size: 29px;
             text-transform: uppercase;
             opacity: 0.7;
         }

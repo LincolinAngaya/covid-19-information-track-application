@@ -109,6 +109,19 @@
                     opacity: 1;
                 }
                 
+                #form {
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+                
+                #srch {
+                    padding: 13px;
+                    font-size: 19px;
+                    border: 2px solid blue;
+                    border-radius: 10px;
+                }
+                
                 #search-button {
                     background-color: var(--nav-color);
                     border: none;

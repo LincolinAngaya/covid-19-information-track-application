@@ -187,13 +187,13 @@
         }
         /*content section*/
         
+        body {
+            justify-content: center;
+        }
+        
         .container {
-            min-width: 290px;
-            max-width: 900px;
-            margin: 15px 10px;
-            text-align: center;
-            border: 1px solid #777;
-            border-radius: 5px;
+            margin-top: 90px;
+            justify-content: center;
         }
         
         h1 {

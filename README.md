@@ -1,11 +1,9 @@
 # covid-19-information-track-application
-# urban-fashion
-# urban-fashion
-urban-fashion is a website  that allows a customers  to have a quick check on fashion and clothes available in their stores .
+this an apllication to let user all over the world to check covid infection and other neccessary information updates.It has other pages to learn on measures and symptoms .
  ## Developed by:
   Lincolin Angaya
   ## website deployment date
-    21st may 2022
+    25th 06 2022
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
@@ -18,19 +16,20 @@ urban-fashion is a website  that allows a customers  to have a quick check on fa
  - [Licence](#licence)
  - [Authors Info](#Authors-Info)
  ## Description
-urban-fashion is a website  that allows a customers  to have a quick check on fashion and clothes available in their stores .
+covid-19 information-track-application is a website  that allows you to see  check covid information in real time .
   
   ## Language
   <ol>
   <li>HTML</li>
   <li>css</li>
+  <li>javascript</li>
 
   </ol>
   
   
 ## Features
 As a user of the application,you will be able to :
-1.enter your credentials in order to go to your questios.
+1.enter your country  in order to go to get covid results in that country.
 2. you can view your results immedietly after odering the clothes  and press submit button.
 
 

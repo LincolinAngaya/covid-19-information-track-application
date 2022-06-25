@@ -11,9 +11,18 @@ const countryList = document.querySelector('#countries');
 
 //add fectch section
 const API_URL = "https://api.covid19api.com/summary";
-document.addEventListener("DOMContentLoaded", () => {
-    fetchCountry();
-});
+async function covid(country) {
+    countries.innerHTML = `<option value="World">World</option>`;
+    resetValue(confirmed);
+    resetValue(deaths);
+    resetValue(recovered);
+
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    console.log(country)
+
+
+}
 
 //fetch data function
 function fetchCountry() {

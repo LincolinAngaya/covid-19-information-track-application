@@ -1,4 +1,11 @@
 //declare variables
+const countries = document.querySelector('datalist');
+const search = document.querySelector('#srch');
+const date = document.querySelector('#date');
+const nameCountry = document.querySelector('#name-country');
+const confirmed = document.querySelector('.confirmed');
+const deaths = document.querySelector('.deaths');
+const recovered = document.querySelector('.recovered');
 const countryList = document.querySelector('#countries');
 ``
 const countryName = document.getElementById('country');

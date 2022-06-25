@@ -89,3 +89,11 @@ function resetValue(element) {
     element.children[1].textContent = 0;
     element.children[2].textContent = 0;
 };
+covid(search.value);
+
+const btnSearch = document.querySelector('button');
+btnSearch.addEventListener('click', (e) => {
+    e.preventDefault();
+    covid(search.value);
+    search.value = '';
+})

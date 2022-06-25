@@ -46,17 +46,10 @@
 </nav>
 <!-- content section starts  -->
 
-<section class="information" id="information">
-    <h1 class="heading">Covid-19 Cases Country Track</h1>
-    <form autocomplete="off" id="form">
-        <input type="text" name="srch" id="srch" required list="countries" placeholder="Enter a name of country">
-        <datalist id="countries">
-            
-        </datalist>
-        <button id="search-button">Search</button>
-    </form>
-</section>
+
+
 <div class="container">
+    <h1 class="heading">Covid-19 Cases Country Track</h1>
 
     <h3 id="date">Date Time</h3>
 
@@ -65,73 +58,81 @@
     <h2 id="name-country">The World</h2>
 
     <div class="content">
-        <div class="box confirmed">
-            <p>confirmed</p>
-            <h3>0</h3>
-            <i class="fa fa-long-arrow-up">0</i>
+        <form autocomplete="off" id="form">
+            <input type="text" name="srch" id="srch" required list="countries" placeholder="Enter a name of country">
+            <datalist id="countries">
+                    
+                </datalist>
+            <button id="search-button">Search</button>
+        </form>
+        <div class="flex">
+            <div class="box confirmed">
+                <p>confirmed</p>
+                <h3>0</h3>
+                <i class="fa fa-long-arrow-up">0</i>
+            </div>
+            <div class="box deaths">
+                <p>deaths</p>
+                <h3>0</h3>
+                <i class="fa fa-long-arrow-up">0</i>
+            </div>
+            <div class="box recovered">
+                <p>recovered</p>
+                <h3>0</h3>
+                <i class="fa fa-long-arrow-up">0</i>
+            </div>
         </div>
-        <div class="box deaths">
-            <p>deaths</p>
-            <h3>0</h3>
-            <i class="fa fa-long-arrow-up">0</i>
-        </div>
-        <div class="box recovered">
-            <p>recovered</p>
-            <h3>0</h3>
-            <i class="fa fa-long-arrow-up">0</i>
-        </div>
+
     </div>
 
-</div>
 
+    <!-- footer section starts  -->
+    <section class="footer ">
+        <div class="box-container ">
+            <div class="box ">
+                <h3>Quick Links</h3>
+                <a href="# ">Home</a>
+                <a href="# ">Data</a>
+                <a href="# ">Statistics</a>
+                <a href="# ">Signs & symptoms</a>
+                <a href="# ">Measures</a>
 
-<!-- footer section starts  -->
-<section class="footer ">
-    <div class="box-container ">
-        <div class="box ">
-            <h3>Quick Links</h3>
-            <a href="# ">Home</a>
-            <a href="# ">Data</a>
-            <a href="# ">Statistics</a>
-            <a href="# ">Signs & symptoms</a>
-            <a href="# ">Measures</a>
+            </div>
+            <div class="box ">
+                <h3>Extra Links</h3>
+                <a href="# ">Tables</a>
+                <a href="# ">learn More</a>
+                <a href="# ">My Wishlist</a>
+                <a href="# ">Ask Questions</a>
+                <a href="# ">Terms of Use</a>
+                <a href="# ">Privacy Policy</a>
+            </div>
+            <div class="box ">
+                <h3>Contact Info</h3>
+                <a href="tel:+254748923137 "> <i class="fas fa-phone "></i> 0748923137 </a>
+                <a href="tel:+254748923137 "> <i class="fas fa-phone "></i> 0793863208 </a>
+                <a href="mailto:lincolinangaya5626@gmail.com "> <i class="fas fa-envelope "></i> covidInfoTrack@gmail.com </a>
+                <a href="# "> <i class="fas fa-map "></i> Nairobi,Kenya </a>
+            </div>
+            <div class="box ">
+                <h3>Follow us</h3>
+                <a href="# "> <i class="fab fa-facebook-f "></i> Facebook </a>
+                <a href="# "> <i class="fab fa-twitter "></i> Twitter </a>
+                <a href="# "> <i class="fab fa-instagram "></i> Instagram </a>
+                <a href="# "> <i class="fab fa-linkedin "></i> Linkedin </a>
+            </div>
+
 
         </div>
-        <div class="box ">
-            <h3>Extra Links</h3>
-            <a href="# ">Tables</a>
-            <a href="# ">learn More</a>
-            <a href="# ">My Wishlist</a>
-            <a href="# ">Ask Questions</a>
-            <a href="# ">Terms of Use</a>
-            <a href="# ">Privacy Policy</a>
-        </div>
-        <div class="box ">
-            <h3>Contact Info</h3>
-            <a href="tel:+254748923137 "> <i class="fas fa-phone "></i> 0748923137 </a>
-            <a href="tel:+254748923137 "> <i class="fas fa-phone "></i> 0793863208 </a>
-            <a href="mailto:lincolinangaya5626@gmail.com "> <i class="fas fa-envelope "></i> covidInfoTrack@gmail.com </a>
-            <a href="# "> <i class="fas fa-map "></i> Nairobi,Kenya </a>
-        </div>
-        <div class="box ">
-            <h3>Follow us</h3>
-            <a href="# "> <i class="fab fa-facebook-f "></i> Facebook </a>
-            <a href="# "> <i class="fab fa-twitter "></i> Twitter </a>
-            <a href="# "> <i class="fab fa-instagram "></i> Instagram </a>
-            <a href="# "> <i class="fab fa-linkedin "></i> Linkedin </a>
-        </div>
+        <div class="credit ">Created By <span>Lincolin Angaya</span> | All Rights Reserved!</div>
 
+    </section>
+    <!-- footer section ends -->
 
-    </div>
-    <div class="credit ">Created By <span>Lincolin Angaya</span> | All Rights Reserved!</div>
+    <script src=" ./index.js "></script>
 
-</section>
-<!-- footer section ends -->
-<script src=" ./main.js "></script>
-<script src=" ./index.js "></script>
+    <body>
 
-<body>
-
-</body>
+    </body>
 
 </html>

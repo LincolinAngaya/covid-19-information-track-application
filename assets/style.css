@@ -117,6 +117,16 @@
                     padding: 8px;
                     border-radius: 5px;
                 }
+                
+                #search-button:hover {
+                    background-color: #FFF;
+                    border: none;
+                    color: var(--nav-color);
+                    font-size: 23px;
+                    padding: 8px;
+                    border-radius: 5px;
+                    transition: 0.5s ease;
+                }
                 /*add navigaton bar media query*/
                 
                 @media(max-width:790px) {

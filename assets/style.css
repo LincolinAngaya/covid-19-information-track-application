@@ -128,12 +128,13 @@
             color: white;
             font-size: 23px;
             padding: 8px;
+            width: 200px;
             border-radius: 5px;
         }
         
         #search-button:hover {
             background-color: #FFF;
-            border: none;
+            border: 2px solid blue;
             color: var(--nav-color);
             font-size: 23px;
             padding: 8px;
@@ -196,9 +197,10 @@
             justify-content: center;
         }
         
-        h1 {
+        .heading {
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-align: center;
         }
         
         h2 {

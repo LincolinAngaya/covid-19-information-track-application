@@ -22,16 +22,19 @@ async function covid(country) {
     console.log(country)
     if (res.status === 4 || res.status === 200) {
         date.textContent = new Date(data.Date).toDateString();
+
+        if (country === '' || country === 'World') {
+            const { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = data.Global;
+            total(TotalConfirmed, TotalDeaths, TotalRecovered);
+            newUpdate(NewConfirmed, NewDeaths, NewRecovered);
+
+            nameCountry.textContent = 'The World';
+            dataChart = [TotalConfirmed, TotalDeaths, TotalRecovered];
+        };
     }
 
 }
 
-//fetch data function
-function fetchCountry() {
-
-    .then(response => response.json())
-        .then(country => renderCountry(country))
-}
 
 
 function renderCountry(country) {

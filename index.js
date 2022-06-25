@@ -20,8 +20,10 @@ async function covid(country) {
     const res = await fetch(API_URL);
     const data = await res.json();
     console.log(country)
+
     if (res.status === 4 || res.status === 200) {
         date.textContent = new Date(data.Date).toDateString();
+
 
         if (country === '' || country === 'World') {
             const { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = data.Global;
@@ -33,35 +35,20 @@ async function covid(country) {
         };
         //render spefic country details
         data.Countries.forEach(item => {
-                const option = document.createElement('option');
-                option.value = item.Country;
-                option.textContent = item.Country;
-                countries.appendChild(option);
+            const option = document.createElement('option');
+            option.value = item.Country;
+            option.textContent = item.Country;
+            countries.appendChild(option);
 
-                if (country === item.Country) {
-                    total(item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered);
-                    newUpdate(item.NewConfirmed, item.NewDeaths, item.NewRecovered);
+            if (country === item.Country) {
+                total(item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered);
+                newUpdate(item.NewConfirmed, item.NewDeaths, item.NewRecovered);
 
-                    nameCountry.textContent = item.Country;
-                    // dataChart = [item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered];
-                }
+                nameCountry.textContent = item.Country;
+                // dataChart = [item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered];
             }
-        }
-
+        });
+    } else {
+        flex.innerHTML = `<h2>Loading.....</h2>`;
     }
-
-
-
-
-
-
-    list.addEventListener('click', () => {
-        countryName.textContent = country.Country;
-        countryCode.textContent = country.CountryCode;
-        date.textContent = country.Date;
-        confirmed.textContent = country.NewConfirmed;
-        deaths.textContent = country.TotalDeaths;
-        recovered.textContent = country.TotalRecovered;
-    })
-})
 }

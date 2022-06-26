@@ -88,6 +88,7 @@ function newUpdate(Confirmed, Deaths, Recovered) {
     // New Recovered
     counting(Recovered, recovered.children[2]);
 };
+//function to search and reset vakues in the search bar
 
 function resetValue(element) {
     element.children[1].textContent = 0;

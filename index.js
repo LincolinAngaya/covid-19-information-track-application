@@ -2,24 +2,26 @@
 const countries = document.querySelector('datalist');
 const search = document.querySelector('#srch');
 const date = document.querySelector('#date');
-const nameCountry = document.querySelector('#name-country');
 const confirmed = document.querySelector('.confirmed');
 const deaths = document.querySelector('.deaths');
 const recovered = document.querySelector('.recovered');
 const countryList = document.querySelector('#countries');
+const nameCountry = document.querySelector('#name-country');
+
 
 
 //add fectch section
-const API_URL = "https://api.covid19api.com/summary";
+const URL = "https://api.covid19api.com/summary";
 async function covid(country) {
-    countries.innerHTML = `<option value="World">World</option>`;
+    countries.innerHTML =
+        `<option value="World">World</option>`;
     resetValue(confirmed);
     resetValue(deaths);
     resetValue(recovered);
 
-    const res = await fetch(API_URL);
+    const res = await fetch(URL);
     const data = await res.json();
-    console.log(country)
+    //console.log(country)
 
     if (res.status === 4 || res.status === 200) {
         date.textContent = new Date(data.Date).toDateString();
@@ -31,7 +33,7 @@ async function covid(country) {
             newUpdate(NewConfirmed, NewDeaths, NewRecovered);
 
             nameCountry.textContent = 'The World';
-            dataChart = [TotalConfirmed, TotalDeaths, TotalRecovered];
+            // data = [TotalConfirmed, TotalDeaths, TotalRecovered];
         };
         //render spefic country details
         data.Countries.forEach(item => {
@@ -45,7 +47,7 @@ async function covid(country) {
                 newUpdate(item.NewConfirmed, item.NewDeaths, item.NewRecovered);
 
                 nameCountry.textContent = item.Country;
-                // dataChart = [item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered];
+                //  = [item.TotalConfirmed, item.TotalDeaths, item.TotalRecovered];
             }
         });
     } else {
@@ -53,6 +55,7 @@ async function covid(country) {
     }
 }
 const speed = 100;
+//function  count
 
 function counting(target, element) {
     const inc = target / speed;
@@ -69,6 +72,7 @@ function counting(target, element) {
 };
 
 function total(Confirmed, Deaths, Recovered) {
+    // Total confirmed
     counting(Confirmed, confirmed.children[1]);
     // Total Deaths
     counting(Deaths, deaths.children[1]);
